@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <title>{% block title %}My Real-Time App{% endblock %}</title>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-500 py-4 text-white text-center">
+        <h1 class="text-3xl font-semibold">My Real-Time App</h1>
+    </header>
+    <nav class="bg-purple-800 py-2 text-white text-center">
+        <ul class="flex justify-center space-x-4">
+            <li><a href="{% url 'index' %}" class="hover:text-blue-500">Beranda</a></li>
+            <li><a href="{% url 'realtime_page' %}" class="hover:text-blue-500">Realtime</a></li>
+            <li><a href="{% url 'celery_demo' %}" class="hover:text-blue-500">Demo Celery</a></li>
+        </ul>
+    </nav>
+    <div class="container mx-auto px-4 py-8">
+        {% block content %}{% endblock %}
+    </div>
+    <footer class="bg-blue-500 py-4 text-white text-center">
+        <p>Real-Time App oleh <a href="https://instagram.com/cahyoadam" target="_blank">Adam Cahyo</a></p>
+        <p>Temukan saya di <a href="https://www.facebook.com/profile.php?id=100018354066357" target="_blank">Facebook</a></p>
+    </footer>
+</body>
+</html>
